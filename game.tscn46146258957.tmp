@@ -1,0 +1,272 @@
+[gd_scene format=3 uid="uid://bikn375b6frb6"]
+
+[ext_resource type="Texture2D" uid="uid://7e7j3pdwq7w5" path="res://assets/Étoile.png" id="1_80nbo"]
+[ext_resource type="Texture2D" uid="uid://c27cyv8soexih" path="res://assets/lv1.png" id="2_e2o6t"]
+[ext_resource type="FontFile" uid="uid://dr5o4g740ykam" path="res://assets/RebellionSquad-ZpprZ.ttf" id="3_feb5d"]
+[ext_resource type="Texture2D" uid="uid://8lwamqk2l05r" path="res://assets/icons8-left-100.png" id="4_ryrav"]
+[ext_resource type="Texture2D" uid="uid://3wmvkn8qn30r" path="res://assets/p1.png" id="5_eow3j"]
+[ext_resource type="Script" uid="uid://dxxct81hq5iit" path="res://scripts/pion.gd" id="5_j5wjh"]
+[ext_resource type="Texture2D" uid="uid://cc77bu6lxjlwf" path="res://assets/p2.png" id="6_j5wjh"]
+
+[sub_resource type="Gradient" id="Gradient_48wxl"]
+interpolation_color_space = 2
+colors = PackedColorArray(0.125191, 0.3613439, 1, 1, 0.004190552, 0.17412558, 0.7749196, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_e2o6t"]
+gradient = SubResource("Gradient_48wxl")
+fill = 1
+fill_from = Vector2(0.5364583, 1)
+fill_to = Vector2(0.47743055, 0)
+
+[sub_resource type="Curve" id="Curve_feb5d"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, -0.94642854), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="BoxMesh" id="BoxMesh_be6yf"]
+
+[sub_resource type="Gradient" id="Gradient_x5rji"]
+colors = PackedColorArray(0.77960896, 0.4196776, 0.18038109, 1, 0.492657, 0.19458699, 0.07137809, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_q7qee"]
+noise_type = 3
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_48wxl"]
+noise = SubResource("FastNoiseLite_q7qee")
+color_ramp = SubResource("Gradient_x5rji")
+seamless = true
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_80nbo"]
+blend_mode = 3
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7ttpu"]
+radius = 32.522335
+
+[sub_resource type="LabelSettings" id="LabelSettings_fc0e3"]
+font = ExtResource("3_feb5d")
+font_size = 64
+outline_size = 17
+outline_color = Color(1.7206743e-05, 0.11394834, 0.3857871, 1)
+shadow_size = 7
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(1, 15)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vef74"]
+bg_color = Color(0.16172719, 0.45435405, 0.99999994, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.0011826206, 0, 0.5730221, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_be6yf"]
+radius = 520.0001
+
+[node name="Gamenv1" type="Node2D" unique_id=179015590]
+
+[node name="bg" type="TextureRect" parent="." unique_id=1971137599]
+offset_right = 652.0
+offset_bottom = 969.0
+texture = SubResource("GradientTexture2D_e2o6t")
+metadata/_edit_lock_ = true
+
+[node name="GPUParticles2D" type="CPUParticles2D" parent="." unique_id=247120720]
+position = Vector2(327, 957)
+texture = ExtResource("1_80nbo")
+lifetime = 1.25
+emission_shape = 3
+emission_rect_extents = Vector2(324, 1)
+direction = Vector2(1, 1)
+gravity = Vector2(0, -980)
+angle_max = 360.0
+scale_amount_min = 0.01
+scale_amount_max = 0.05
+hue_variation_min = -0.02
+hue_variation_max = 0.14
+hue_variation_curve = SubResource("Curve_feb5d")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=1111712236]
+position = Vector2(325.00006, 487)
+scale = Vector2(554, -549.69147)
+mesh = SubResource("BoxMesh_be6yf")
+texture = SubResource("NoiseTexture2D_48wxl")
+
+[node name="Lv1" type="Sprite2D" parent="." unique_id=964580377]
+material = SubResource("CanvasItemMaterial_80nbo")
+position = Vector2(323.50003, 486)
+scale = Vector2(2.1679688, 2.1171873)
+texture = ExtResource("2_e2o6t")
+
+[node name="Area2D" type="Area2D" parent="Lv1" unique_id=349797921]
+position = Vector2(-86.48653, -85.01846)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lv1/Area2D" unique_id=1290939608]
+shape = SubResource("CircleShape2D_7ttpu")
+
+[node name="Area2D2" type="Area2D" parent="Lv1" unique_id=743663902]
+position = Vector2(0.23059082, -85.01846)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lv1/Area2D2" unique_id=1342471697]
+shape = SubResource("CircleShape2D_7ttpu")
+
+[node name="Area2D3" type="Area2D" parent="Lv1" unique_id=1269106368]
+position = Vector2(87.40898, -85.01846)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lv1/Area2D3" unique_id=845835273]
+shape = SubResource("CircleShape2D_7ttpu")
+
+[node name="Area2D4" type="Area2D" parent="Lv1" unique_id=1416070560]
+position = Vector2(-86.48653, 1.4169769)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lv1/Area2D4" unique_id=232585682]
+shape = SubResource("CircleShape2D_7ttpu")
+
+[node name="Area2D5" type="Area2D" parent="Lv1" unique_id=27556260]
+position = Vector2(0.23059082, 1.4169769)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lv1/Area2D5" unique_id=86138441]
+shape = SubResource("CircleShape2D_7ttpu")
+
+[node name="Area2D6" type="Area2D" parent="Lv1" unique_id=1601730612]
+position = Vector2(87.40898, 1.4169769)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lv1/Area2D6" unique_id=55333373]
+shape = SubResource("CircleShape2D_7ttpu")
+
+[node name="Area2D7" type="Area2D" parent="Lv1" unique_id=1935372276]
+position = Vector2(-86.48653, 86.90776)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lv1/Area2D7" unique_id=1646626349]
+shape = SubResource("CircleShape2D_7ttpu")
+
+[node name="Area2D8" type="Area2D" parent="Lv1" unique_id=1426017238]
+position = Vector2(0.23059082, 86.90776)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lv1/Area2D8" unique_id=320222479]
+shape = SubResource("CircleShape2D_7ttpu")
+
+[node name="Area2D9" type="Area2D" parent="Lv1" unique_id=754349291]
+position = Vector2(87.40898, 86.90776)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lv1/Area2D9" unique_id=1094065610]
+shape = SubResource("CircleShape2D_7ttpu")
+
+[node name="playing" type="Label" parent="." unique_id=2032405503]
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 168.0
+offset_top = 19.0
+offset_right = 473.0
+offset_bottom = 97.0
+grow_horizontal = 2
+text = "Joueur 1"
+label_settings = SubResource("LabelSettings_fc0e3")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="retour" type="Button" parent="." unique_id=2123378810]
+offset_left = 523.0
+offset_top = 3.0
+offset_right = 651.0
+offset_bottom = 123.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_feb5d")
+theme_override_font_sizes/font_size = 39
+theme_override_styles/normal = SubResource("StyleBoxFlat_vef74")
+icon = ExtResource("4_ryrav")
+flat = true
+
+[node name="p11" type="Area2D" parent="." unique_id=1471290734]
+position = Vector2(194.00002, 816)
+scale = Vector2(0.08, 0.08)
+script = ExtResource("5_j5wjh")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="p11" unique_id=130145399]
+scale = Vector2(0.9999998, 0.9999998)
+shape = SubResource("CircleShape2D_be6yf")
+
+[node name="P1" type="Sprite2D" parent="p11" unique_id=303148187]
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("5_eow3j")
+
+[node name="p12" type="Area2D" parent="." unique_id=11497953]
+position = Vector2(315, 816.00006)
+scale = Vector2(0.08, 0.08)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="p12" unique_id=159498480]
+scale = Vector2(0.9999998, 0.9999998)
+shape = SubResource("CircleShape2D_be6yf")
+
+[node name="P1" type="Sprite2D" parent="p12" unique_id=2091899993]
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("5_eow3j")
+
+[node name="p13" type="Area2D" parent="." unique_id=866089246]
+position = Vector2(438, 816.00006)
+scale = Vector2(0.08, 0.08)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="p13" unique_id=961778531]
+scale = Vector2(0.9999998, 0.9999998)
+shape = SubResource("CircleShape2D_be6yf")
+
+[node name="P1" type="Sprite2D" parent="p13" unique_id=1150452398]
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("5_eow3j")
+
+[node name="p14" type="Area2D" parent="." unique_id=2031788518]
+position = Vector2(193, 907)
+scale = Vector2(0.08, 0.08)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="p14" unique_id=1780092625]
+scale = Vector2(0.9999998, 0.9999998)
+shape = SubResource("CircleShape2D_be6yf")
+
+[node name="P1" type="Sprite2D" parent="p14" unique_id=24782833]
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("6_j5wjh")
+
+[node name="p15" type="Area2D" parent="." unique_id=430983249]
+position = Vector2(314, 907)
+scale = Vector2(0.08, 0.08)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="p15" unique_id=520424574]
+scale = Vector2(0.9999998, 0.9999998)
+shape = SubResource("CircleShape2D_be6yf")
+
+[node name="P1" type="Sprite2D" parent="p15" unique_id=685165881]
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("6_j5wjh")
+
+[node name="p16" type="Area2D" parent="." unique_id=914593403]
+position = Vector2(437, 907)
+scale = Vector2(0.08, 0.08)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="p16" unique_id=302796459]
+scale = Vector2(0.9999998, 0.9999998)
+shape = SubResource("CircleShape2D_be6yf")
+
+[node name="P1" type="Sprite2D" parent="p16" unique_id=1004789353]
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("6_j5wjh")
+
+[connection signal="mouse_entered" from="p11" to="p11" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="p11" to="p11" method="_on_mouse_exited"]

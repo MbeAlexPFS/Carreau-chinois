@@ -1,0 +1,37 @@
+9cad1ddce9e5a63143ba340c9520626b
+::res://::1790253953
+credit.tscn::PackedScene::379686082252002109::1790249175::0::1::::<><><>0<>0<><>::uid://cvvdfep4vy335::::res://scripts/tutoriel.gd<>uid://7e7j3pdwq7w5::::res://assets/Étoile.png<>uid://dr5o4g740ykam::::res://assets/RebellionSquad-ZpprZ.ttf<>uid://8lwamqk2l05r::::res://assets/icons8-left-100.png
+export_presets.cfg::TextFile::-1::1790207942::0::1::::<><><>0<>0<><>::
+game difficulty.tscn::PackedScene::5032106068284536733::1790249479::0::1::::<><><>0<>0<><>::uid://bkj8nsck1gt4w::::res://scripts/game_difficulty.gd<>uid://dr5o4g740ykam::::res://assets/RebellionSquad-ZpprZ.ttf<>uid://7e7j3pdwq7w5::::res://assets/Étoile.png<>uid://8lwamqk2l05r::::res://assets/icons8-left-100.png<>uid://bg5pntrma5ao2::::res://assets/icons8-play-100.png
+game option.tscn::PackedScene::4326566029708089429::1790249896::0::1::::<><><>0<>0<><>::uid://bt6f83548lvil::::res://scripts/game_option.gd<>uid://dr5o4g740ykam::::res://assets/RebellionSquad-ZpprZ.ttf<>uid://7e7j3pdwq7w5::::res://assets/Étoile.png<>uid://8lwamqk2l05r::::res://assets/icons8-left-100.png<>uid://c27cyv8soexih::::res://assets/lv1.png<>uid://bpefcu4upvciq::::res://assets/lv2.png<>uid://bg5pntrma5ao2::::res://assets/icons8-play-100.png
+game.tscn::PackedScene::2969416260651674173::1790250223::0::1::::<><><>0<>0<><>::uid://7e7j3pdwq7w5::::res://assets/Étoile.png<>uid://beo3m1sougbao::::res://scripts/game.gd<>uid://c27cyv8soexih::::res://assets/lv1.png<>uid://dr5o4g740ykam::::res://assets/RebellionSquad-ZpprZ.ttf<>uid://rit5d63fraa5::::res://objects/slot.tscn<>uid://8lwamqk2l05r::::res://assets/icons8-left-100.png<>uid://d02mjk00tfybx::::res://objects/pion.tscn<>uid://bg5pntrma5ao2::::res://assets/icons8-play-100.png
+gamelvl2-3pions.tscn::PackedScene::9086964214137199586::1790250558::0::1::::<><><>0<>0<><>::uid://beo3m1sougbao::::res://scripts/game.gd<>uid://7e7j3pdwq7w5::::res://assets/Étoile.png<>uid://bpefcu4upvciq::::res://assets/lv2.png<>uid://rit5d63fraa5::::res://objects/slot.tscn<>uid://dr5o4g740ykam::::res://assets/RebellionSquad-ZpprZ.ttf<>uid://8lwamqk2l05r::::res://assets/icons8-left-100.png<>uid://d02mjk00tfybx::::res://objects/pion.tscn<>uid://bg5pntrma5ao2::::res://assets/icons8-play-100.png
+gamelvl2-4pions.tscn::PackedScene::8250590358389382400::1790251239::0::1::::<><><>0<>0<><>::uid://beo3m1sougbao::::res://scripts/game.gd<>uid://7e7j3pdwq7w5::::res://assets/Étoile.png<>uid://bpefcu4upvciq::::res://assets/lv2.png<>uid://rit5d63fraa5::::res://objects/slot.tscn<>uid://dr5o4g740ykam::::res://assets/RebellionSquad-ZpprZ.ttf<>uid://8lwamqk2l05r::::res://assets/icons8-left-100.png<>uid://d02mjk00tfybx::::res://objects/pion.tscn<>uid://bg5pntrma5ao2::::res://assets/icons8-play-100.png
+icon.png::CompressedTexture2D::5896336816523730400::1785359282::1785359411::1::::<><><>0<>0<>6da5e530f5eaddda8d5fb2138f7520ed<>res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.ctex::
+menu.tscn::PackedScene::4261772996125962819::1790249238::0::1::::<><><>0<>0<><>::uid://dr5o4g740ykam::::res://assets/RebellionSquad-ZpprZ.ttf<>uid://dp4pvkuxao1l5::::res://scripts/menu.gd<>uid://7e7j3pdwq7w5::::res://assets/Étoile.png<>uid://btxck7oviovaw::::res://assets/icons8-bot-100.png<>uid://brdu2gab4ssi::::res://assets/icons8-group-100.png<>uid://cqah2nvguk57y::::res://icon.png<>uid://wct80h3riwqr::::res://assets/icons8-book-100.png<>uid://dw6pkuhdlb4c7::::res://assets/icons8-exclamation-100.png
+tutoriel.tscn::PackedScene::9057406145978846683::1790249893::0::1::::<><><>0<>0<><>::uid://cvvdfep4vy335::::res://scripts/tutoriel.gd<>uid://7e7j3pdwq7w5::::res://assets/Étoile.png<>uid://dr5o4g740ykam::::res://assets/RebellionSquad-ZpprZ.ttf<>uid://8lwamqk2l05r::::res://assets/icons8-left-100.png
+::res://assets/::1790252077
+icons8-book-100.png::CompressedTexture2D::1549497194798890905::1790205250::1790205354::1::::<><><>0<>0<>0297c6b5bb0c964efb2f80131780f625<>res://.godot/imported/icons8-book-100.png-0323468116d13a53c9f6ad970c1a9c18.ctex::
+icons8-bot-100.png::CompressedTexture2D::3767630396423548666::1785362446::1785362455::1::::<><><>0<>0<>ebd4c53d408e0f78ba661b32626bbc32<>res://.godot/imported/icons8-bot-100.png-20906857772184bb8345f17271553d56.ctex::
+icons8-exclamation-100.png::CompressedTexture2D::8768341995754127280::1790205349::1790205354::1::::<><><>0<>0<>c4938c74b1419ca73f98385eb9ae906a<>res://.godot/imported/icons8-exclamation-100.png-04518a6b2d39cce79ae98f1caeee3ad4.ctex::
+icons8-group-100.png::CompressedTexture2D::105502559715223852::1785363539::1785363549::1::::<><><>0<>0<>3bbe5d4626fc9d48a2ac9ea963188854<>res://.godot/imported/icons8-group-100.png-c6e124f69f2d84c24f23ba16138aeee8.ctex::
+icons8-left-100.png::CompressedTexture2D::2340276424678558393::1785364534::1785364534::1::::<><><>0<>0<>990d4d28702d57b06769eb0c19695e21<>res://.godot/imported/icons8-left-100.png-f46b31542d5aca96f3dc6a99404d05b9.ctex::
+icons8-play-100.png::CompressedTexture2D::2870420073107081767::1785365236::1785365237::1::::<><><>0<>0<>e01bb202d1cdb5e21a21b0a99dc81469<>res://.godot/imported/icons8-play-100.png-b583c376611e138fb9fcd7d4eedd8c30.ctex::
+lv1.png::CompressedTexture2D::6734165681587868915::1785364726::1785364727::1::::<><><>0<>0<>e34c8899c946fbf41973fab07d9c5387<>res://.godot/imported/lv1.png-de850b59c353ef2cd0b3ffafff9cd7d3.ctex::
+lv2.png::CompressedTexture2D::3447819102027380480::1785364729::1785364730::1::::<><><>0<>0<>ed20bf014a6f6d9841d24b9bd187b077<>res://.godot/imported/lv2.png-d3749a67778f1129599e7159f1f2e952.ctex::
+p1.png::CompressedTexture2D::2011470584876675611::1786655461::1786655462::1::::<><><>0<>0<>b5a830619d0bf31ebcf3a224ec908d63<>res://.godot/imported/p1.png-43402c6f018d4a9d92cf14b852ddec7c.ctex::
+p2.png::CompressedTexture2D::4981224971241443829::1786655461::1786655462::1::::<><><>0<>0<>aefc2e6ae82a88f5cb0952cac56c4f03<>res://.godot/imported/p2.png-37bc01188d73bfc455257056c5f398b7.ctex::
+RebellionSquad-ZpprZ.ttf::FontFile::8415305917395452196::1785362132::1785362133::1::::<><><>0<>0<>1dc0dc31142ade18c4d60ca82a459516<>res://.godot/imported/RebellionSquad-ZpprZ.ttf-17d18baa1ccbb069784d588c4fa33f4c.fontdata::
+Étoile.png::CompressedTexture2D::2256261017339188874::1786616061::1786616061::1::::<><><>0<>0<>70012320cd84b15dc2a18392760c461c<>res://.godot/imported/Étoile.png-8ac3bdcbbef41a08757e20f51c08350e.ctex::
+::res://objects/::1790252077
+pion.tscn::PackedScene::8970466582463180497::1790250596::0::1::::<><><>0<>0<><>::uid://dxxct81hq5iit::::res://scripts/pion.gd<>uid://cc77bu6lxjlwf::::res://assets/p2.png<>uid://3wmvkn8qn30r::::res://assets/p1.png
+slot.tscn::PackedScene::1210932767297267510::1790250748::0::1::::<><><>0<>0<><>::uid://bgprlbmyjjkgr::::res://scripts/slot.gd
+::res://scripts/::1790252077
+game.gd::GDScript::2697800246203030082::1790198860::0::1::::<>Node2D<><>0<>0<><>::
+game_difficulty.gd::GDScript::3108916344941289036::1786614489::0::1::::<>Control<><>0<>0<><>::
+game_option.gd::GDScript::3784368457714383095::1790201127::0::1::::<>Control<><>0<>0<><>::
+menu.gd::GDScript::8272910474256207436::1786611725::0::1::::<>Control<><>0<>0<><>::
+minimax.gd::GDScript::6007363784734944093::1790202431::0::1::::<>RefCounted<><>0<>0<><>::
+pion.gd::GDScript::8821243280943236371::1790190284::0::1::::<>Area2D<><>0<>0<><>::
+slot.gd::GDScript::2839571316606021597::1790196832::0::1::::<>Area2D<><>0<>0<><>::
+tutoriel.gd::GDScript::6290350331180095158::1790205576::0::1::::<>Control<><>0<>0<><>::

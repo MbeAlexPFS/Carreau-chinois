@@ -1,0 +1,314 @@
+[gd_scene format=3 uid="uid://dpswausxfmegu"]
+
+[ext_resource type="Script" uid="uid://beo3m1sougbao" path="res://scripts/game.gd" id="1_esvyf"]
+[ext_resource type="Texture2D" uid="uid://7e7j3pdwq7w5" path="res://assets/Étoile.png" id="2_n6r0p"]
+[ext_resource type="Texture2D" uid="uid://bpefcu4upvciq" path="res://assets/lv2.png" id="3_yvqco"]
+[ext_resource type="PackedScene" uid="uid://rit5d63fraa5" path="res://objects/slot.tscn" id="4_1x2y6"]
+[ext_resource type="FontFile" uid="uid://dr5o4g740ykam" path="res://assets/RebellionSquad-ZpprZ.ttf" id="5_4nm01"]
+[ext_resource type="Texture2D" uid="uid://8lwamqk2l05r" path="res://assets/icons8-left-100.png" id="6_btd18"]
+[ext_resource type="PackedScene" uid="uid://d02mjk00tfybx" path="res://objects/pion.tscn" id="7_c2oq6"]
+[ext_resource type="Texture2D" uid="uid://bg5pntrma5ao2" path="res://assets/icons8-play-100.png" id="8_qaewf"]
+
+[sub_resource type="Gradient" id="Gradient_esvyf"]
+interpolation_color_space = 2
+colors = PackedColorArray(0.125191, 0.3613439, 1, 1, 0.004190552, 0.17412558, 0.7749196, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_n6r0p"]
+gradient = SubResource("Gradient_esvyf")
+fill = 1
+fill_from = Vector2(0.5364583, 1)
+fill_to = Vector2(0.47743055, 0)
+
+[sub_resource type="Curve" id="Curve_yvqco"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, -0.94642854), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="BoxMesh" id="BoxMesh_1x2y6"]
+
+[sub_resource type="Gradient" id="Gradient_4nm01"]
+colors = PackedColorArray(0.77960896, 0.4196776, 0.18038109, 1, 0.492657, 0.19458699, 0.07137809, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_btd18"]
+noise_type = 3
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_c2oq6"]
+noise = SubResource("FastNoiseLite_btd18")
+color_ramp = SubResource("Gradient_4nm01")
+seamless = true
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_qaewf"]
+blend_mode = 3
+
+[sub_resource type="LabelSettings" id="LabelSettings_ndbe4"]
+font = ExtResource("5_4nm01")
+font_size = 64
+outline_size = 17
+outline_color = Color(1.7206743e-05, 0.11394834, 0.3857871, 1)
+shadow_size = 7
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(1, 15)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cx0m1"]
+bg_color = Color(0.16172719, 0.45435405, 0.99999994, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.0011826206, 0, 0.5730221, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hamym"]
+bg_color = Color(0.16172719, 0.45435405, 0.99999994, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.0011826206, 0, 0.5730221, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_dbekq"]
+font = ExtResource("5_4nm01")
+font_size = 41
+font_color = Color(1, 0, 0, 1)
+outline_size = 17
+outline_color = Color(1.7206743e-05, 0.11394834, 0.3857871, 1)
+shadow_size = 7
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(1, 15)
+
+[node name="Gamenv1" type="Node2D" unique_id=179015590]
+script = ExtResource("1_esvyf")
+
+[node name="bg" type="TextureRect" parent="." unique_id=362329370]
+offset_right = 652.0
+offset_bottom = 969.0
+scale = Vector2(1.1010246, 1.3186518)
+texture = SubResource("GradientTexture2D_n6r0p")
+
+[node name="GPUParticles2D" type="CPUParticles2D" parent="." unique_id=964596225]
+position = Vector2(366.00003, 1247.0001)
+scale = Vector2(1.0000001, 1.0000001)
+texture = ExtResource("2_n6r0p")
+lifetime = 1.6
+emission_shape = 3
+emission_rect_extents = Vector2(324, 1)
+direction = Vector2(1, 1)
+gravity = Vector2(0, -800)
+angle_max = 360.0
+scale_amount_min = 0.01
+scale_amount_max = 0.05
+hue_variation_min = -0.02
+hue_variation_max = 0.14
+hue_variation_curve = SubResource("Curve_yvqco")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=282854985]
+position = Vector2(356.3775, 695.777)
+scale = Vector2(608.1054, -640.69293)
+mesh = SubResource("BoxMesh_1x2y6")
+texture = SubResource("NoiseTexture2D_c2oq6")
+
+[node name="board" type="Sprite2D" parent="." unique_id=271057450]
+material = SubResource("CanvasItemMaterial_qaewf")
+position = Vector2(362.37744, 692.777)
+scale = Vector2(3.0185738, 3.1779451)
+texture = ExtResource("3_yvqco")
+
+[node name="slot" parent="board" unique_id=993545810 instance=ExtResource("4_1x2y6")]
+position = Vector2(-89.75925, -85.596375)
+scale = Vector2(0.46126127, 0.4723248)
+
+[node name="slot2" parent="board" unique_id=15310908 instance=ExtResource("4_1x2y6")]
+position = Vector2(-46.486504, -85.596375)
+scale = Vector2(0.46126127, 0.4723248)
+
+[node name="slot3" parent="board" unique_id=212012503 instance=ExtResource("4_1x2y6")]
+position = Vector2(-2.1228485, -85.596375)
+scale = Vector2(0.46126127, 0.4723248)
+
+[node name="slot4" parent="board" unique_id=225046046 instance=ExtResource("4_1x2y6")]
+position = Vector2(41.14995, -85.596375)
+scale = Vector2(0.46126127, 0.4723248)
+
+[node name="slot5" parent="board" unique_id=1854833104 instance=ExtResource("4_1x2y6")]
+position = Vector2(84.42268, -85.596375)
+scale = Vector2(0.46126127, 0.4723248)
+
+[node name="slot6" parent="board" unique_id=1713753819 instance=ExtResource("4_1x2y6")]
+position = Vector2(-89.75925, -41.951675)
+scale = Vector2(0.46126127, 0.4723248)
+
+[node name="slot7" parent="board" unique_id=2140265156 instance=ExtResource("4_1x2y6")]
+position = Vector2(-46.48651, -41.951675)
+scale = Vector2(0.46126127, 0.4723248)
+
+[node name="slot8" parent="board" unique_id=1623567436 instance=ExtResource("4_1x2y6")]
+position = Vector2(-2.1228485, -41.951675)
+scale = Vector2(0.46126127, 0.4723248)
+
+[node name="slot9" parent="board" unique_id=1804579446 instance=ExtResource("4_1x2y6")]
+position = Vector2(41.14995, -41.951675)
+scale = Vector2(0.46126127, 0.4723248)
+
+[node name="slot10" parent="board" unique_id=1966040869 instance=ExtResource("4_1x2y6")]
+position = Vector2(84.42267, -41.951675)
+scale = Vector2(0.46126127, 0.4723248)
+
+[node name="slot11" parent="board" unique_id=682098195 instance=ExtResource("4_1x2y6")]
+position = Vector2(-89.75924, 2.7933044)
+scale = Vector2(0.46126127, 0.4723248)
+
+[node name="slot12" parent="board" unique_id=1659956250 instance=ExtResource("4_1x2y6")]
+position = Vector2(-46.48651, 2.7933044)
+scale = Vector2(0.46126127, 0.4723248)
+
+[node name="slot13" parent="board" unique_id=1209745273 instance=ExtResource("4_1x2y6")]
+position = Vector2(-2.1228485, 2.7933044)
+scale = Vector2(0.46126127, 0.4723248)
+
+[node name="slot14" parent="board" unique_id=1090865940 instance=ExtResource("4_1x2y6")]
+position = Vector2(41.14995, 2.7933044)
+scale = Vector2(0.46126127, 0.4723248)
+
+[node name="slot15" parent="board" unique_id=2079892364 instance=ExtResource("4_1x2y6")]
+position = Vector2(84.42267, 2.7933044)
+scale = Vector2(0.46126127, 0.4723248)
+
+[node name="slot16" parent="board" unique_id=1901143747 instance=ExtResource("4_1x2y6")]
+position = Vector2(-89.75924, 46.438004)
+scale = Vector2(0.46126127, 0.4723248)
+
+[node name="slot17" parent="board" unique_id=1724844534 instance=ExtResource("4_1x2y6")]
+position = Vector2(-46.48651, 46.438004)
+scale = Vector2(0.46126127, 0.4723248)
+
+[node name="slot18" parent="board" unique_id=1964962251 instance=ExtResource("4_1x2y6")]
+position = Vector2(-2.1228485, 46.438004)
+scale = Vector2(0.46126127, 0.4723248)
+
+[node name="slot19" parent="board" unique_id=2073291448 instance=ExtResource("4_1x2y6")]
+position = Vector2(41.14995, 46.438004)
+scale = Vector2(0.46126127, 0.4723248)
+
+[node name="slot20" parent="board" unique_id=436783281 instance=ExtResource("4_1x2y6")]
+position = Vector2(84.42267, 46.438004)
+scale = Vector2(0.46126127, 0.4723248)
+
+[node name="slot21" parent="board" unique_id=1589997789 instance=ExtResource("4_1x2y6")]
+position = Vector2(-89.75925, 89.71593)
+scale = Vector2(0.46126127, 0.4723248)
+
+[node name="slot22" parent="board" unique_id=1622109207 instance=ExtResource("4_1x2y6")]
+position = Vector2(-46.48651, 89.71593)
+scale = Vector2(0.46126127, 0.4723248)
+
+[node name="slot23" parent="board" unique_id=1104376032 instance=ExtResource("4_1x2y6")]
+position = Vector2(-2.1228485, 89.71593)
+scale = Vector2(0.46126127, 0.4723248)
+
+[node name="slot24" parent="board" unique_id=25191501 instance=ExtResource("4_1x2y6")]
+position = Vector2(41.14995, 89.71593)
+scale = Vector2(0.46126127, 0.4723248)
+
+[node name="slot25" parent="board" unique_id=1749924504 instance=ExtResource("4_1x2y6")]
+position = Vector2(84.42267, 89.71593)
+scale = Vector2(0.46126127, 0.4723248)
+
+[node name="playing" type="Label" parent="." unique_id=1467448552]
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 187.0
+offset_top = 31.999996
+offset_right = 492.0
+offset_bottom = 110.0
+grow_horizontal = 2
+scale = Vector2(1.1010246, 1.3186518)
+text = "Joueur 1"
+label_settings = SubResource("LabelSettings_ndbe4")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="retour" type="Button" parent="." unique_id=1400752476]
+offset_left = 576.0
+offset_right = 704.0
+offset_bottom = 120.0
+scale = Vector2(1.1010246, 1.3186518)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_4nm01")
+theme_override_font_sizes/font_size = 39
+theme_override_styles/normal = SubResource("StyleBoxFlat_cx0m1")
+icon = ExtResource("6_btd18")
+flat = true
+
+[node name="pion" parent="." unique_id=663779506 instance=ExtResource("7_c2oq6")]
+position = Vector2(168.00002, 1130)
+scale = Vector2(0.08808197, 0.105492145)
+team = 1
+
+[node name="pion2" parent="." unique_id=1643054157 instance=ExtResource("7_c2oq6")]
+position = Vector2(295.99994, 1130)
+scale = Vector2(0.08808197, 0.105492145)
+team = 1
+
+[node name="pion3" parent="." unique_id=144862454 instance=ExtResource("7_c2oq6")]
+position = Vector2(423.99994, 1130)
+scale = Vector2(0.08808197, 0.105492145)
+team = 1
+
+[node name="pion8" parent="." unique_id=1504940912 instance=ExtResource("7_c2oq6")]
+position = Vector2(549.9999, 1130)
+scale = Vector2(0.08808197, 0.105492145)
+team = 1
+
+[node name="pion4" parent="." unique_id=2107144400 instance=ExtResource("7_c2oq6")]
+position = Vector2(172, 276)
+scale = Vector2(0.08808197, 0.105492145)
+
+[node name="pion5" parent="." unique_id=323929139 instance=ExtResource("7_c2oq6")]
+position = Vector2(300, 276)
+scale = Vector2(0.08808197, 0.105492145)
+
+[node name="pion6" parent="." unique_id=2055473025 instance=ExtResource("7_c2oq6")]
+position = Vector2(428, 276)
+scale = Vector2(0.08808197, 0.105492145)
+
+[node name="pion7" parent="." unique_id=2120930637 instance=ExtResource("7_c2oq6")]
+position = Vector2(555, 276)
+scale = Vector2(0.08808197, 0.105492145)
+
+[node name="rejouer" type="Button" parent="." unique_id=862482382]
+visible = false
+z_index = 200
+z_as_relative = false
+offset_left = 200.0
+offset_top = 984.0
+offset_right = 528.0
+offset_bottom = 1104.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_4nm01")
+theme_override_font_sizes/font_size = 29
+theme_override_styles/normal = SubResource("StyleBoxFlat_hamym")
+text = "Rejouer"
+icon = ExtResource("8_qaewf")
+
+[node name="desc" type="Label" parent="." unique_id=1921161263]
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 175.5
+offset_top = 86.99999
+offset_right = 503.5
+offset_bottom = 165.0
+grow_horizontal = 2
+scale = Vector2(1.1010246, 1.3186518)
+text = "Joueur VS Jouer"
+label_settings = SubResource("LabelSettings_dbekq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="retour" to="." method="_on_retour_pressed"]

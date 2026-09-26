@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://d02mjk00tfybx"]
+
+[ext_resource type="Script" uid="uid://dxxct81hq5iit" path="res://scripts/pion.gd" id="1_6fxob"]
+[ext_resource type="Texture2D" uid="uid://cc77bu6lxjlwf" path="res://assets/p2.png" id="2_4mbn2"]
+[ext_resource type="Texture2D" uid="uid://3wmvkn8qn30r" path="res://assets/p1.png" id="2_tdock"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4mbn2"]
+radius = 200.00003
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7ttpu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_4mbn2")
+}],
+"loop": 1,
+"name": &"blue",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_tdock")
+}],
+"loop": 1,
+"name": &"red",
+"speed": 5.0
+}]
+
+[node name="pion" type="Area2D" unique_id=663779506]
+scale = Vector2(0.08, 0.08)
+script = ExtResource("1_6fxob")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=639821167]
+scale = Vector2(0.9999998, 0.9999998)
+shape = SubResource("CircleShape2D_4mbn2")
+
+[node name="P1" type="AnimatedSprite2D" parent="." unique_id=1803182918]
+scale = Vector2(0.99999994, 0.99999994)
+sprite_frames = SubResource("SpriteFrames_7ttpu")
+animation = &"red"
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

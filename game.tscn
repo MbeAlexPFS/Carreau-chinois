@@ -1,0 +1,242 @@
+[gd_scene format=3 uid="uid://bikn375b6frb6"]
+
+[ext_resource type="Texture2D" uid="uid://7e7j3pdwq7w5" path="res://assets/Étoile.png" id="1_80nbo"]
+[ext_resource type="Script" uid="uid://beo3m1sougbao" path="res://scripts/game.gd" id="1_eow3j"]
+[ext_resource type="Texture2D" uid="uid://c27cyv8soexih" path="res://assets/lv1.png" id="2_e2o6t"]
+[ext_resource type="FontFile" uid="uid://dr5o4g740ykam" path="res://assets/RebellionSquad-ZpprZ.ttf" id="3_feb5d"]
+[ext_resource type="PackedScene" uid="uid://rit5d63fraa5" path="res://objects/slot.tscn" id="3_ryrav"]
+[ext_resource type="Texture2D" uid="uid://8lwamqk2l05r" path="res://assets/icons8-left-100.png" id="4_ryrav"]
+[ext_resource type="PackedScene" uid="uid://d02mjk00tfybx" path="res://objects/pion.tscn" id="6_eow3j"]
+[ext_resource type="Texture2D" uid="uid://bg5pntrma5ao2" path="res://assets/icons8-play-100.png" id="8_j5wjh"]
+
+[sub_resource type="Gradient" id="Gradient_48wxl"]
+interpolation_color_space = 2
+colors = PackedColorArray(0.125191, 0.3613439, 1, 1, 0.004190552, 0.17412558, 0.7749196, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_e2o6t"]
+gradient = SubResource("Gradient_48wxl")
+fill = 1
+fill_from = Vector2(0.5364583, 1)
+fill_to = Vector2(0.47743055, 0)
+
+[sub_resource type="Curve" id="Curve_j5wjh"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, -0.94642854), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="BoxMesh" id="BoxMesh_be6yf"]
+
+[sub_resource type="Gradient" id="Gradient_x5rji"]
+colors = PackedColorArray(0.77960896, 0.4196776, 0.18038109, 1, 0.492657, 0.19458699, 0.07137809, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_q7qee"]
+noise_type = 3
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_48wxl"]
+noise = SubResource("FastNoiseLite_q7qee")
+color_ramp = SubResource("Gradient_x5rji")
+seamless = true
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_80nbo"]
+blend_mode = 3
+
+[sub_resource type="LabelSettings" id="LabelSettings_fc0e3"]
+font = ExtResource("3_feb5d")
+font_size = 64
+outline_size = 17
+outline_color = Color(1.7206743e-05, 0.11394834, 0.3857871, 1)
+shadow_size = 7
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(1, 15)
+
+[sub_resource type="LabelSettings" id="LabelSettings_j5wjh"]
+font = ExtResource("3_feb5d")
+font_size = 41
+font_color = Color(1, 0, 0, 1)
+outline_size = 17
+outline_color = Color(1.7206743e-05, 0.11394834, 0.3857871, 1)
+shadow_size = 7
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(1, 15)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vef74"]
+bg_color = Color(0.16172719, 0.45435405, 0.99999994, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.0011826206, 0, 0.5730221, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hve3p"]
+bg_color = Color(0.16172719, 0.45435405, 0.99999994, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.0011826206, 0, 0.5730221, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="Gamenv1" type="Node2D" unique_id=179015590]
+script = ExtResource("1_eow3j")
+
+[node name="bg" type="TextureRect" parent="." unique_id=1971137599]
+offset_right = 652.0
+offset_bottom = 969.0
+scale = Vector2(1.1010246, 1.3186518)
+texture = SubResource("GradientTexture2D_e2o6t")
+
+[node name="GPUParticles2D" type="CPUParticles2D" parent="." unique_id=1685156153]
+position = Vector2(366.00003, 1247.0001)
+scale = Vector2(1.0000001, 1.0000001)
+texture = ExtResource("1_80nbo")
+lifetime = 1.6
+emission_shape = 3
+emission_rect_extents = Vector2(324, 1)
+direction = Vector2(1, 1)
+gravity = Vector2(0, -800)
+angle_max = 360.0
+scale_amount_min = 0.01
+scale_amount_max = 0.05
+hue_variation_min = -0.02
+hue_variation_max = 0.14
+hue_variation_curve = SubResource("Curve_j5wjh")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=1111712236]
+position = Vector2(363.03436, 698.4258)
+scale = Vector2(609.96765, -724.8516)
+mesh = SubResource("BoxMesh_be6yf")
+texture = SubResource("NoiseTexture2D_48wxl")
+
+[node name="board" type="Sprite2D" parent="." unique_id=964580377]
+material = SubResource("CanvasItemMaterial_80nbo")
+position = Vector2(361.53433, 697.42584)
+scale = Vector2(2.386987, 2.7918327)
+texture = ExtResource("2_e2o6t")
+
+[node name="slot" parent="board" unique_id=993545810 instance=ExtResource("3_ryrav")]
+position = Vector2(-86.486496, -85.96312)
+scale = Vector2(0.46126127, 0.4723248)
+
+[node name="slot2" parent="board" unique_id=583586507 instance=ExtResource("3_ryrav")]
+position = Vector2(-1.1531677, -90.21417)
+scale = Vector2(0.46126127, 0.4723248)
+
+[node name="slot3" parent="board" unique_id=1992137740 instance=ExtResource("3_ryrav")]
+position = Vector2(83.25765, -85.963104)
+scale = Vector2(0.46126127, 0.4723248)
+
+[node name="slot4" parent="board" unique_id=1713140265 instance=ExtResource("3_ryrav")]
+position = Vector2(-87.40901, 0.94467163)
+scale = Vector2(0.46126127, 0.4723248)
+
+[node name="slot5" parent="board" unique_id=1720748251 instance=ExtResource("3_ryrav")]
+position = Vector2(-0.69189453, 0.9446564)
+scale = Vector2(0.46126127, 0.4723248)
+
+[node name="slot6" parent="board" unique_id=1922714692 instance=ExtResource("3_ryrav")]
+position = Vector2(84.18021, -0.9446411)
+scale = Vector2(0.46126127, 0.4723248)
+
+[node name="slot7" parent="board" unique_id=770363028 instance=ExtResource("3_ryrav")]
+position = Vector2(-86.02525, 86.90779)
+scale = Vector2(0.46126127, 0.4723248)
+
+[node name="slot8" parent="board" unique_id=180576732 instance=ExtResource("3_ryrav")]
+position = Vector2(-2.0756683, 91.63107)
+scale = Vector2(0.46126127, 0.4723248)
+
+[node name="slot9" parent="board" unique_id=2115423252 instance=ExtResource("3_ryrav")]
+position = Vector2(83.71896, 86.90781)
+scale = Vector2(0.46126127, 0.4723248)
+
+[node name="playing" type="Label" parent="." unique_id=2032405503]
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 187.0
+offset_top = 31.999996
+offset_right = 492.0
+offset_bottom = 110.0
+grow_horizontal = 2
+scale = Vector2(1.1010246, 1.3186518)
+text = "Joueur 1"
+label_settings = SubResource("LabelSettings_fc0e3")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="desc" type="Label" parent="." unique_id=710549468]
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 175.5
+offset_top = 86.99999
+offset_right = 503.5
+offset_bottom = 165.0
+grow_horizontal = 2
+scale = Vector2(1.1010246, 1.3186518)
+text = "Joueur VS Jouer"
+label_settings = SubResource("LabelSettings_j5wjh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="retour" type="Button" parent="." unique_id=2123378810]
+offset_left = 576.0
+offset_right = 704.0
+offset_bottom = 120.0
+scale = Vector2(1.1010246, 1.3186518)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_feb5d")
+theme_override_font_sizes/font_size = 39
+theme_override_styles/normal = SubResource("StyleBoxFlat_vef74")
+icon = ExtResource("4_ryrav")
+flat = true
+
+[node name="pion" parent="." unique_id=663779506 instance=ExtResource("6_eow3j")]
+position = Vector2(233, 1153)
+scale = Vector2(0.08808197, 0.105492145)
+team = 1
+
+[node name="pion2" parent="." unique_id=878087307 instance=ExtResource("6_eow3j")]
+position = Vector2(360.99994, 1153)
+scale = Vector2(0.08808197, 0.105492145)
+team = 1
+
+[node name="pion3" parent="." unique_id=1068493325 instance=ExtResource("6_eow3j")]
+position = Vector2(488.99994, 1153)
+scale = Vector2(0.08808197, 0.105492145)
+team = 1
+
+[node name="pion4" parent="." unique_id=631220585 instance=ExtResource("6_eow3j")]
+position = Vector2(232, 258)
+scale = Vector2(0.08808197, 0.105492145)
+
+[node name="pion5" parent="." unique_id=1657793015 instance=ExtResource("6_eow3j")]
+position = Vector2(360, 258)
+scale = Vector2(0.08808197, 0.105492145)
+
+[node name="pion6" parent="." unique_id=32318873 instance=ExtResource("6_eow3j")]
+position = Vector2(488, 258)
+scale = Vector2(0.08808197, 0.105492145)
+
+[node name="rejouer" type="Button" parent="." unique_id=160172518]
+visible = false
+z_index = 200
+z_as_relative = false
+offset_left = 200.0
+offset_top = 984.0
+offset_right = 528.0
+offset_bottom = 1104.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_feb5d")
+theme_override_font_sizes/font_size = 29
+theme_override_styles/normal = SubResource("StyleBoxFlat_hve3p")
+text = "Rejouer"
+icon = ExtResource("8_j5wjh")
+
+[connection signal="pressed" from="retour" to="." method="_on_retour_pressed"]
+[connection signal="pressed" from="rejouer" to="." method="_on_rejouer_pressed"]

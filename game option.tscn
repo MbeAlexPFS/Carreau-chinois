@@ -1,0 +1,276 @@
+[gd_scene format=3 uid="uid://b2v257n8bqsin"]
+
+[ext_resource type="Script" uid="uid://bt6f83548lvil" path="res://scripts/game_option.gd" id="1_k84ay"]
+[ext_resource type="FontFile" uid="uid://dr5o4g740ykam" path="res://assets/RebellionSquad-ZpprZ.ttf" id="1_wa4gt"]
+[ext_resource type="Texture2D" uid="uid://7e7j3pdwq7w5" path="res://assets/Étoile.png" id="2_i7kn1"]
+[ext_resource type="Texture2D" uid="uid://8lwamqk2l05r" path="res://assets/icons8-left-100.png" id="2_nvbbf"]
+[ext_resource type="Texture2D" uid="uid://c27cyv8soexih" path="res://assets/lv1.png" id="3_u3yo5"]
+[ext_resource type="Texture2D" uid="uid://bpefcu4upvciq" path="res://assets/lv2.png" id="4_dyjyv"]
+[ext_resource type="Texture2D" uid="uid://bg5pntrma5ao2" path="res://assets/icons8-play-100.png" id="5_dyjyv"]
+
+[sub_resource type="Gradient" id="Gradient_48wxl"]
+interpolation_color_space = 2
+colors = PackedColorArray(0.125191, 0.3613439, 1, 1, 0.004190552, 0.17412558, 0.7749196, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_u3yo5"]
+gradient = SubResource("Gradient_48wxl")
+fill = 1
+fill_from = Vector2(0.5364583, 1)
+fill_to = Vector2(0.47743055, 0)
+
+[sub_resource type="Curve" id="Curve_i7kn1"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, -0.94642854), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="LabelSettings" id="LabelSettings_dyjyv"]
+font = ExtResource("1_wa4gt")
+font_size = 64
+outline_size = 17
+outline_color = Color(1.7206743e-05, 0.11394834, 0.3857871, 1)
+shadow_size = 7
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(1, 15)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k84ay"]
+bg_color = Color(0.16172719, 0.45435405, 0.99999994, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.0011826206, 0, 0.5730221, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_u3yo5"]
+font = ExtResource("1_wa4gt")
+font_size = 128
+outline_size = 17
+outline_color = Color(1.7206743e-05, 0.11394834, 0.3857871, 1)
+shadow_size = 7
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(1, 15)
+
+[sub_resource type="LabelSettings" id="LabelSettings_k84ay"]
+font = ExtResource("1_wa4gt")
+font_size = 128
+font_color = Color(1, 1, 1, 0.6313726)
+outline_size = 17
+outline_color = Color(1.7206743e-05, 0.11394834, 0.3857871, 1)
+shadow_size = 7
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(1, 15)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i7kn1"]
+bg_color = Color(0.16172719, 0.45435405, 0.99999994, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.0011826206, 0, 0.5730221, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="GameOption" type="Control" unique_id=712735139]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_k84ay")
+
+[node name="bg" type="TextureRect" parent="." unique_id=442735726]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_u3yo5")
+metadata/_edit_lock_ = true
+
+[node name="GPUParticles2D" type="CPUParticles2D" parent="." unique_id=1285425037]
+position = Vector2(366, 1247)
+texture = ExtResource("2_i7kn1")
+lifetime = 1.6
+emission_shape = 3
+emission_rect_extents = Vector2(324, 1)
+direction = Vector2(1, 1)
+gravity = Vector2(0, -800)
+angle_max = 360.0
+scale_amount_min = 0.01
+scale_amount_max = 0.05
+hue_variation_min = -0.02
+hue_variation_max = 0.14
+hue_variation_curve = SubResource("Curve_i7kn1")
+
+[node name="lbnbpion" type="Label" parent="." unique_id=914398239]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -39.0
+offset_bottom = 39.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Nombre de pion"
+label_settings = SubResource("LabelSettings_dyjyv")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="lbchlv" type="Label" parent="." unique_id=1181009073]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -540.0
+offset_bottom = -462.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Choix de cadre"
+label_settings = SubResource("LabelSettings_dyjyv")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="retour" type="Button" parent="." unique_id=781426449]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -128.0
+offset_bottom = 120.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_wa4gt")
+theme_override_font_sizes/font_size = 39
+theme_override_styles/normal = SubResource("StyleBoxFlat_k84ay")
+icon = ExtResource("2_nvbbf")
+flat = true
+
+[node name="Lv1" type="Sprite2D" parent="." unique_id=1842334093]
+position = Vector2(191.99998, 392.00003)
+scale = Vector2(0.99414057, 1.0371093)
+texture = ExtResource("3_u3yo5")
+
+[node name="Lv2" type="Sprite2D" parent="." unique_id=2094257931]
+modulate = Color(1, 1, 1, 0.6313726)
+position = Vector2(528, 392)
+scale = Vector2(1.010625, 1.0184375)
+texture = ExtResource("4_dyjyv")
+
+[node name="j1" type="Label" parent="." unique_id=327431657]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 191.0
+offset_top = 140.5
+offset_right = 295.0
+offset_bottom = 295.5
+grow_vertical = 2
+text = "3"
+label_settings = SubResource("LabelSettings_u3yo5")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="j2" type="Label" parent="." unique_id=294541011]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -313.0
+offset_top = 142.5
+offset_right = -209.0
+offset_bottom = 297.5
+grow_horizontal = 0
+grow_vertical = 2
+text = "4"
+label_settings = SubResource("LabelSettings_k84ay")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="jouer" type="Button" parent="." unique_id=1226041191]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 55.0
+offset_top = -172.0
+offset_right = 355.0
+offset_bottom = -52.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_wa4gt")
+theme_override_font_sizes/font_size = 29
+theme_override_styles/normal = SubResource("StyleBoxFlat_i7kn1")
+text = "Jouer 1er"
+icon = ExtResource("5_dyjyv")
+
+[node name="jouer2" type="Button" parent="." unique_id=11324505]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -354.0
+offset_top = -173.0
+offset_right = -59.0
+offset_bottom = -53.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_wa4gt")
+theme_override_font_sizes/font_size = 29
+theme_override_styles/normal = SubResource("StyleBoxFlat_i7kn1")
+text = "Jouer 2nd"
+icon = ExtResource("5_dyjyv")
+
+[node name="lvl1" type="Button" parent="." unique_id=30656824]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 256.0
+offset_right = 320.0
+offset_bottom = 528.0
+flat = true
+
+[node name="lvl2" type="Button" parent="." unique_id=498590330]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 264.0
+offset_right = 656.0
+offset_bottom = 520.0
+flat = true
+
+[node name="pion" type="Button" parent="." unique_id=1793921607]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 800.0
+offset_right = 292.0
+offset_bottom = 921.0
+flat = true
+
+[node name="pion2" type="Button" parent="." unique_id=1858571762]
+layout_mode = 0
+offset_left = 416.0
+offset_top = 808.0
+offset_right = 516.0
+offset_bottom = 929.0
+flat = true
+
+[connection signal="pressed" from="retour" to="." method="_on_retour_pressed"]
+[connection signal="pressed" from="jouer" to="." method="_on_jouer_pressed"]
+[connection signal="pressed" from="jouer2" to="." method="_on_jouer_2_pressed"]
+[connection signal="pressed" from="lvl1" to="." method="_on_lvl_1_pressed"]
+[connection signal="pressed" from="lvl2" to="." method="_on_lvl_2_pressed"]
+[connection signal="pressed" from="pion" to="." method="_on_pion_pressed"]
+[connection signal="pressed" from="pion2" to="." method="_on_pion_2_pressed"]

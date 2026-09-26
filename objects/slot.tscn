@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://rit5d63fraa5"]
+
+[ext_resource type="Script" uid="uid://bgprlbmyjjkgr" path="res://scripts/slot.gd" id="1_dsmf2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dsmf2"]
+radius = 24.0
+
+[node name="slot" type="Area2D" unique_id=993545810]
+script = ExtResource("1_dsmf2")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1755950835]
+shape = SubResource("CircleShape2D_dsmf2")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

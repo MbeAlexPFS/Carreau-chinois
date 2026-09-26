@@ -1,0 +1,12 @@
+res://tutoriel.tscn
+res://scripts/game.gd
+res://scripts/game_option.gd
+res://game option.tscn
+res://gamelvl2-3pions.tscn
+res://objects/pion.tscn
+res://objects/slot.tscn
+res://gamelvl2-4pions.tscn
+res://game.tscn
+res://scripts/pion.gd
+res://scripts/menu.gd
+res://menu.tscn

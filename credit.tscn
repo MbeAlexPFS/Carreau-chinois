@@ -1,0 +1,128 @@
+[gd_scene format=3 uid="uid://fn6myxtbxwdx"]
+
+[ext_resource type="Script" uid="uid://cvvdfep4vy335" path="res://scripts/tutoriel.gd" id="1_2l348"]
+[ext_resource type="Texture2D" uid="uid://7e7j3pdwq7w5" path="res://assets/Étoile.png" id="2_aokq2"]
+[ext_resource type="FontFile" uid="uid://dr5o4g740ykam" path="res://assets/RebellionSquad-ZpprZ.ttf" id="3_83x8r"]
+[ext_resource type="Texture2D" uid="uid://8lwamqk2l05r" path="res://assets/icons8-left-100.png" id="4_wsd54"]
+
+[sub_resource type="Gradient" id="Gradient_18bwq"]
+interpolation_color_space = 2
+colors = PackedColorArray(0.125191, 0.3613439, 1, 1, 0.004190552, 0.17412558, 0.7749196, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_u3yo5"]
+gradient = SubResource("Gradient_18bwq")
+fill = 1
+fill_from = Vector2(0.5364583, 1)
+fill_to = Vector2(0.47743055, 0)
+
+[sub_resource type="Curve" id="Curve_q2i7j"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, -0.94642854), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k84ay"]
+bg_color = Color(0.16172719, 0.45435405, 0.99999994, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.0011826206, 0, 0.5730221, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_qp5rx"]
+font = ExtResource("3_83x8r")
+font_size = 64
+outline_size = 17
+outline_color = Color(1.7206743e-05, 0.11394834, 0.3857871, 1)
+shadow_size = 7
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(1, 15)
+
+[sub_resource type="LabelSettings" id="LabelSettings_yegv2"]
+font = ExtResource("3_83x8r")
+font_size = 36
+shadow_offset = Vector2(1, 15)
+
+[node name="tutoriel" type="Control" unique_id=712735139]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2l348")
+
+[node name="bg" type="TextureRect" parent="." unique_id=442735726]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_u3yo5")
+metadata/_edit_lock_ = true
+
+[node name="GPUParticles2D" type="CPUParticles2D" parent="." unique_id=2062099331]
+position = Vector2(366, 1247)
+texture = ExtResource("2_aokq2")
+lifetime = 1.5999999999999999
+emission_shape = 3
+emission_rect_extents = Vector2(324, 1)
+direction = Vector2(1, 1)
+gravity = Vector2(0, -800)
+angle_max = 360.0
+scale_amount_min = 0.01
+scale_amount_max = 0.05
+hue_variation_min = -0.02
+hue_variation_max = 0.14
+hue_variation_curve = SubResource("Curve_q2i7j")
+
+[node name="retour" type="Button" parent="." unique_id=781426449]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -128.0
+offset_bottom = 120.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_83x8r")
+theme_override_font_sizes/font_size = 39
+theme_override_styles/normal = SubResource("StyleBoxFlat_k84ay")
+icon = ExtResource("4_wsd54")
+flat = true
+
+[node name="titre" type="Label" parent="." unique_id=51755470]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 75.0
+offset_bottom = 153.0
+grow_horizontal = 2
+text = "Crédit"
+label_settings = SubResource("LabelSettings_qp5rx")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=888346053]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 200.0
+offset_right = 672.0
+offset_bottom = 1240.0
+
+[node name="content" type="Label" parent="ScrollContainer" unique_id=1483278030]
+custom_minimum_size = Vector2(624, 0)
+layout_mode = 2
+text = "- Icones : https://icons8.com/
+
+- Font : RebellionSquad-ZpprZ (https://www.1001fonts.com/)
+
+- Moteur : Godot"
+label_settings = SubResource("LabelSettings_yegv2")
+autowrap_mode = 2
+
+[connection signal="pressed" from="retour" to="." method="_on_retour_pressed"]
